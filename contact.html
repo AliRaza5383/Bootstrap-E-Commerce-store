@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css" />
+
+    <style>
+        .me-6 img {
+            height: 230px;
+        }
+
+        .img-fluid {
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand me-3" href="/">
+                    <img src="./logo.png" alt="Logo" width="35" height="35">
+                </a>
+                <ul class="navbar-nav d-none d-lg-flex">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Shop</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Men</a></li>
+                            <li><a class="dropdown-item" href="#">Women</a></li>
+                            <li><a class="dropdown-item" href="#">Electronics</a></li>
+                            <li><a class="dropdown-item" href="#">Accessories</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" href="./about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="btn btn-outline-success d-lg-none mx-auto" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar">
+                Search
+            </button>
+
+            <div class="search-container d-none d-lg-flex">
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+
+            <ul class="navbar-nav d-none d-lg-flex">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Deals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bi bi-cart"></i> Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><button type="button"
+                            class="btn btn-outline-secondary">login</button></a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><button type="button"
+                            class="btn btn-outline-secondary">SignUp</button></a>
+                </li>
+            </ul>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form class="d-flex mb-3">
+                <input class="form-control me-2" type="search" placeholder="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+
+
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link active" href="/">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Shop</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Men</a></li>
+                        <li><a class="dropdown-item" href="#">Women</a></li>
+                        <li><a class="dropdown-item" href="#">Electronics</a></li>
+                        <li><a class="dropdown-item" href="#">Accessories</a></li>
+                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./about.html">About</a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Deals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bi bi-cart"></i> Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Signup</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="login-email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="login-email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="login-password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="login-password"
+                                placeholder="Enter your password">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="remember-me">
+                                <label class="form-check-label" for="remember-me">Remember me</label>
+                            </div>
+                            <a href="#" class="text-primary">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--SignUp Modal -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">SignUp</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirm-password" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirm-password"
+                                placeholder="Confirm your password">
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="terms">
+                            <label class="form-check-label" for="terms">I agree to the terms and conditions</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="mt-8 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div
+                        class="bg-light d-lg-flex justify-content-between align-items-center py-6 py-lg-3 px-8 text-center text-lg-start rounded">
+                        <div class="d-lg-flex align-items-center">
+                            <img src="./apple-touch-icon.png" alt="" style="width: 100px; height: 100px;"
+                                class="img-fluid">
+                            <div class="ms-lg-4">
+                                <!-- <h1 class="fs-2 mb-1">Welcome to ShopEase</h1> -->
+                                <h1 class="fs-2 mb-1">Get in Touch with Us!</h1>
+                                <span>
+                                    Have questions or need assistance? Contact us—we’d love to hear from you!
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="bg-light p-4 rounded shadow">
+                        <h2 class="text-center mb-4">Contact Us</h2>
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" placeholder="Enter subject"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"
+                                    required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4">Our Contact Information</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card p-4 shadow-sm border-0">
+                        <div class="mb-3">
+                            <h5 class="fw-bold">Address</h5>
+                            <p>123 Main Street, City, Country</p>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="fw-bold">Phone Number</h5>
+                            <p>+123 456 7890</p>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="fw-bold">Email</h5>
+                            <p>support@shopease.com</p>
+                        </div>
+                        <div class="mb-3">
+                            <h5 class="fw-bold">Business Hours</h5>
+                            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-4 mb-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            How can I track my order?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You can track your order using the tracking link provided in your confirmation email or by
+                            logging into your account.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq2">
+                            What are your delivery areas?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We currently deliver to major cities. You can check availability at checkout by entering
+                            your zip code.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq3">
+                            Can I return a product?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we accept returns within 30 days of purchase. Items must be in original condition with
+                            packaging.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq4">
+                            How can I contact customer support?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            You can reach us via email at support@shopease.com or call our helpline at (123) 456-7890.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="py-0 mb-5 pb-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Our Location</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="ratio ratio-16x9">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27215.03676565061!2d74.30619152163247!3d31.520369348251682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191a4c1249df27%3A0x7d819f13f25d0e67!2sLahore%2C%20Pakistan!5e0!3m2!1sen!2s!4v1707412345678"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer bg-dark text-white text-center py-4">
+        <div class="container">
+            <div class="mb-1">
+                <a href="/">
+                    <img src="./footerlogo.jpg" alt="Logo" class="img-fluid">
+                </a>
+            </div>
+
+            <!-- <div class="mb-4">
+        <a href="#" class="mx-2 text-white"><i class="bi bi-facebook fs-4"></i></a>
+        <a href="#" class="mx-2 text-white"><i class="bi bi-twitter fs-4"></i></a>
+        <a href="#" class="mx-2 text-white"><i class="bi bi-instagram fs-4"></i></a>
+      </div> -->
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-3">
+                    <h6 class="mb-3">Categories</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white"> Fashion & Apparel</a></li>
+                        <li><a href="#" class="text-white"> Beauty & Personal Care</a></li>
+                        <li><a href="#" class="text-white">Electronics</a></li>
+                        <li><a href="#" class="text-white">Accessories</a></li>
+                        <li><a href="#" class="text-white">Furniture & Home Decor</a></li>
+                        <li><a href="#" class="text-white">Food & Beverages</a></li>
+                        <li><a href="#" class="text-white"> Health & Wellness</a></li>
+                        <li><a href="#" class="text-white"> Toys & Games</a></li>
+                        <li><a href="#" class="text-white"> Jewelry & Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="mb-3">Get to Know Us</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">About</a></li>
+                        <li><a href="#" class="text-white">Company</a></li>
+                        <li><a href="#" class="text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-white">Help Center</a></li>
+                        <li><a href="#" class="text-white">Location</a></li>
+                        <li><a href="#" class="text-white">Number:+343433443343</a></li>
+                        <li><a href="#" class="text-white">Our Value</a></li>
+                        <li><a href="#" class="text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="mb-3">For Consumers</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Payments</a></li>
+                        <li><a href="#" class="text-white">Shipping</a></li>
+                        <li><a href="#" class="text-white">Returns</a></li>
+                        <li><a href="#" class="text-white">FAQS</a></li>
+                        <li><a href="#" class="text-white">Shope Checkout</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <h6 class="mb-3">Social Media Links</h6>
+                    <div class="d-flex justify-content-center">
+                        <a href="#" class="mx-2">
+                            <img src="./facebook logo.jpg" class="rounded-circle" alt="facebook" style="width: 40px;">
+                        </a>
+                        <a href="#" class="mx-2">
+                            <img src="./instagram logo.jpg" class="rounded-circle" alt="instagram" style="width: 40px;">
+                        </a>
+                        <a href="#" class="mx-2">
+                            <img src="./ticktok logo.jpg" class="rounded-circle" alt="ticktok" style="width: 40px;">
+                        </a>
+                    </div>
+                    <div class="mt-5">
+                        <h6 class="mb-3">Get deliveries with ShopEase</h6>
+                        <div class="d-flex justify-content-center">
+                            <a href="#" class="mx-2">
+                                <img src="./appstorelogo.jpg" alt="App store" style="width: 70px;">
+                            </a>
+                            <a href="#" class="mx-2">
+                                <img src="./playstorelogo.jpg" alt="play store" style="width: 70px;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="mt-4">
+                <h6>Payment Partners</h6>
+                <div class="d-flex justify-content-center">
+                    <img src="./visapayment.jpg" alt="Visa" style="height: 40px; width: 100px;" class="mx-2">
+                    <img src="./Mastercardpayment.jpg" style="height: 40px; width: 100px;" alt="Mastercard"
+                        class="mx-2">
+                    <img src="./paypalpayment.jpg" style="height: 40px; width: 100px;" alt="PayPal" class="mx-2">
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="my-4 bg-light">
+
+        <p class="small">&copy; 2025 FreshCart. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
+</body>
+
+</html>
